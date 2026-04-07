@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' hide AuthState;
 
 import 'core/errors/supabase_error_handler.dart';
 import 'injection.dart';
@@ -19,7 +19,8 @@ void main() async {
     // Initialize Supabase with your credentials
     await Supabase.initialize(
       url: 'https://db.xsveadyxejofublpevsw.supabase.co',
-      anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhzdmVhZHl4ZWpvZnVibHBldnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MDQ5MDgsImV4cCI6MjA5MDk4MDkwOH0.a6_FrkN5i1ZI1hn8VpzBaAk8gWSJCuG25vWtzD3frNY',
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhzdmVhZHl4ZWpvZnVibHBldnN3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MDQ5MDgsImV4cCI6MjA5MDk4MDkwOH0.a6_FrkN5i1ZI1hn8VpzBaAk8gWSJCuG25vWtzD3frNY',
       // Enable debug mode in development
       debug: true,
     );
@@ -31,7 +32,7 @@ void main() async {
   } catch (e, stackTrace) {
     debugPrint('Failed to initialize app: $e');
     debugPrint(stackTrace.toString());
-    
+
     // Run error app if initialization fails
     runApp(SupabaseInitErrorApp(error: e.toString()));
   }
@@ -46,7 +47,7 @@ class SupabaseInitErrorApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMissingTable = SupabaseErrorHandler.isMissingTableError(error);
-    
+
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
@@ -137,7 +138,8 @@ class DhikrReminderApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<AuthBloc>()..add(const AuthCheckRequested())),
+        BlocProvider(
+            create: (_) => getIt<AuthBloc>()..add(const AuthCheckRequested())),
         BlocProvider(create: (_) => getIt<QuoteBloc>()),
         BlocProvider(create: (_) => getIt<SettingsBloc>()),
       ],
@@ -156,7 +158,7 @@ class DhikrReminderApp extends StatelessWidget {
                 brightness: Brightness.light,
               ),
               fontFamily: 'Cairo',
-              cardTheme: CardTheme(
+              cardTheme: CardThemeData(
                 elevation: 4,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16),

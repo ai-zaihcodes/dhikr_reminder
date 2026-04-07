@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
 import '../../../core/errors/failures.dart';
-import '../../entities/user_settings_entity.dart';
-import '../../repositories/user_settings_repository_interface.dart';
+import '../entities/user_settings_entity.dart';
+import '../repositories/user_settings_repository_interface.dart';
 
 /// Use case for getting user settings
 class GetUserSettingsUseCase {
@@ -21,7 +21,8 @@ class UpdateUserSettingsUseCase {
 
   UpdateUserSettingsUseCase(this._repository);
 
-  Future<Either<Failure, UserSettingsEntity>> call(UserSettingsEntity settings) async {
+  Future<Either<Failure, UserSettingsEntity>> call(
+      UserSettingsEntity settings) async {
     return await _repository.updateSettings(settings);
   }
 }
@@ -54,7 +55,8 @@ class UpdateSelectedCategoriesUseCase {
 
   UpdateSelectedCategoriesUseCase(this._repository);
 
-  Future<Either<Failure, UserSettingsEntity>> call(List<String> categories) async {
+  Future<Either<Failure, UserSettingsEntity>> call(
+      List<String> categories) async {
     return await _repository.updateSelectedCategories(categories);
   }
 }

@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 
-import '../../../core/errors/failures.dart';
-import '../../entities/quote_entity.dart';
-import '../../repositories/quote_repository_interface.dart';
+import '../../core/errors/failures.dart';
+import '../entities/quote_entity.dart';
+import '../repositories/quote_repository_interface.dart';
 
 /// Use case for getting all quotes
 class GetQuotesUseCase {

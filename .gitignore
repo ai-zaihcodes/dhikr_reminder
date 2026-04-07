@@ -1,0 +1,61 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# IntelliJ
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Android Studio
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+
+# Flutter/Dart/Pub
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_*.png
+
+# Web
+.dart_tool/
+.packages
+
+# macOS
+Flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+windows/flutter/generated_plugin_registrant.cc
+
+# Linux
+linux/flutter/ephemeral/
+linux/flutter/generated_plugin_registrant.cc
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Supabase
+supabase/.temp/
