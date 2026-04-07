@@ -1,0 +1,23 @@
+<!--
+    Required permissions for Dhikr Reminder app
+    Copy these into android/app/src/main/AndroidManifest.xml inside <manifest> tag
+-->
+
+    <!-- Internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <!-- Screen unlock detection -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    
+    <!-- Overlay permission for showing Dhikr above lock screen -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    
+    <!-- Wake lock to keep screen on during reminder -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    
+    <!-- For Android 14+ (API 34+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
+    
+    <!-- For Android 12+ (API 31+) -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>

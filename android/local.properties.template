@@ -1,0 +1,4 @@
+# This is a template file. Copy to local.properties and update flutter.sdk path
+flutter.sdk=/path/to/flutter
+flutter.versionCode=1
+flutter.versionName=1.0.0

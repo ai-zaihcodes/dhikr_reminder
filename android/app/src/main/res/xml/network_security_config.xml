@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Allow cleartext traffic if needed for development -->
+    <cleartextTrafficPermitted>false</cleartextTrafficPermitted>
+    
+    <!-- Trust system certificates -->
+    <trust-anchors>
+        <certificates src="system"/>
+    </trust-anchors>
+</network-security-config>
